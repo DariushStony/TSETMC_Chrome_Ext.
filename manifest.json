@@ -1,0 +1,33 @@
+{
+    "manifest_version" : 2,
+    "name" : "Tsetmc_ext",
+    "version" : "1.0",
+    "description" : "This Extension was Made By Dariush Hadipour",
+    "permissions" : ["tabs", "activeTab", "storage", "declarativeContent"],
+    "browser_action" : {
+        "default_popup" : "popup.html",
+        "default_title" : "Dariush Hadipour Has Been Made This Extension",
+        "default_icon": {
+            "16" : "images/icon16.png",
+            "32" : "images/icon32.png",
+            "48" : "images/icon48.png",
+            "128" : "images/icon128.png"
+          }
+    },
+    "icons" : {
+        "16" : "images/icon16.png",
+        "32" : "images/icon32.png",
+        "48" : "images/icon48.png",
+        "128" : "images/icon128.png"
+    },
+    "background" : {
+        "scripts" : ["background.js"],
+        "persistent": false
+    },
+    "content_scripts" : [
+        {
+            "matches" : ["*://*.tsetmc.com/*", "*://*.tsetmc.ir/*"],
+            "js" : ["content.js"]
+        }
+    ]
+}
